@@ -1,3 +1,6 @@
+import { StaticImageData } from "next/image";
+import { dali, monet, munch, paulRubens, picasso, rembrandt, vanGogh } from "./images";
+
 export type Artwork = {
     name: string;
     image: string;
@@ -11,7 +14,7 @@ export type Artist = {
     wasBorIn: string;
     diedIn: string;
     movement: string;
-    portrait: string;
+    portrait: StaticImageData | undefined;
     description: string;
     artworks: Artwork[]
 }
@@ -29,7 +32,7 @@ const data: Data = {
                 wasBorIn: "3/30/1853/Países Baixos",
                 diedIn: "7/29/1890/França",
                 movement: "Pós-impressionismo",
-                portrait: "https://images.metmuseum.org/CRDImages/ep/original/DT1502_cropped2.jpg",
+                portrait: vanGogh,
                 description: "Vincent Willem van Gogh foi um artista pós-impressionista holandês que emergiu como uma das mais famosas figuras na historia da arte ocidental após sua morte. As paisagens, artes mortas, retratos e auto-retratos são caracterizados por vibrantes contrastes de cores complementares, pincelas exprecivas e planos lineares abstratos, inspirados pelas impressões japonêsas que ele adquiria e admirava. Suas inovações contribuiram para a fundação da arte moderna. As imagens de Van Gogh geralmente refletem simbolismo pessoas, experiêncais e emoções que ele discutiu em correspondência a sua família e amigos. Ele expressou o desejo de comunicar felicidade e conforto por meio de sua arte, inspirado a reunir uma comunidade de artistas com o mesmo pensamento no sul da França. Van Gogh nunca conseguiu sucesso comercial em seu tempo de vida e dependia do suporte financeiro do seu irmão, Theo Van Gogh. Sua vida foi formada por uma depressão severa e episódios de estresse psicológico agudo. Vincent cometeu suicídio aos 37 anos",
                 artworks: [
                     {
@@ -70,7 +73,7 @@ const data: Data = {
                 wasBorIn: "10/25/1881/Espanha",
                 diedIn: "4/8/1973/França",
                 movement: "Cubismo",
-                portrait: "https://static.wixstatic.com/media/a36bfa_14e610c98eb84f0692b7ab61656178c2~mv2_d_3036_4048_s_4_2.jpg/v1/fill/w_3036,h_4048,al_c,q_85/a36bfa_14e610c98eb84f0692b7ab61656178c2~mv2_d_3036_4048_s_4_2.jpg",
+                portrait: picasso,
                 description: "Um dos mais influentes artistas do século 20, ele é conhecido por ser o co-fundador do movimento cubista, o invetor da arte cinética, o co-inventor da colagem e por uma grande variedade de estilos que ele ajudou a desenvolver e explorar. O trabalho de picasso é frequentemente categorizado em períodos. Enquanto o nome de vários de seus períodos posteriores ainda são debatidos, os períodos mais comumente aceitos em seu trabalho são o Período Azul, Período Rosé, Período de Afro-Influencia, Cubismo Analítico e o Cubismo Sintético, também chamado de Período de Cristal",
                 artworks: [
                     {
@@ -111,7 +114,7 @@ const data: Data = {
                 wasBorIn: "1/6/1832/França",
                 diedIn: "1/23/1883/França",
                 movement: "Romantism",
-                portrait: "",
+                portrait: undefined,
                 description: "",
                 artworks: [
                     {
@@ -152,7 +155,7 @@ const data: Data = {
                 wasBorIn: "5/11/1904/Espanha",
                 diedIn: "1/23/1989/Espanha",
                 movement: "Surrealism",
-                portrait: "https://i.pinimg.com/originals/3b/48/01/3b4801afde02f76f9b6a9648dbdf6b3f.jpg",
+                portrait: dali,
                 description: "Salvador Domingo Dalí was a Spanish renowned for his technical skill, precise draftsmanship, and the striking and bizarre images in his work. Dalí received his formal education in fine arts in Madrid. Influenced by Impressionism and the Renaissance masters from a young age he became increasingly attracted to Cubism and avant-garde movements. He moved closer to Surrealism in the late 1920s and joined the Surrealist group in 1929, soon becoming one of its leading exponents. His best-known work, The Persistence of Memory, was completed in August 1931, and is one of the most famous Surrealist paintings. based on his interest in classicism, mysticism, and recent scientific developments. Dalí's artistic repertoire included painting, graphic arts, film, sculpture, design and photography, at times in collaboration with other artists. He also wrote fiction, poetry, autobiography, essays and criticism. Major themes in his work include dreams, the subconscious, sexuality, religion, science and his closest personal relationships.",
                 artworks: [
                     {
@@ -193,7 +196,7 @@ const data: Data = {
                 wasBorIn: "",
                 diedIn: "",
                 movement: "Expressionism",
-                portrait: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Edvard_Munch_-_Self-Portrait_-_Google_Art_Project_%28533070%29.jpg",
+                portrait: munch,
                 description: "",
                 artworks: [
                     {
@@ -234,7 +237,7 @@ const data: Data = {
                 wasBorIn: "",
                 diedIn: "",
                 movement: "Baroque",
-                portrait: "",
+                portrait: undefined,
                 description: "",
                 artworks: [
                     {
@@ -275,7 +278,7 @@ const data: Data = {
                 wasBorIn: "7/15/1606/Países Baixos",
                 diedIn: "10/4/1669/Países Baixos",
                 movement: "Baroque",
-                portrait: "https://upload.wikimedia.org/wikipedia/commons/5/55/Rembrandt_Self-Portrait_%28Royal_Collection%29.jpg",
+                portrait: rembrandt,
                 description: "",
                 artworks: [
                     {
@@ -316,7 +319,7 @@ const data: Data = {
                 wasBorIn: "11/14/1840/França",
                 diedIn: "12/5/1926/França",
                 movement: "Naturalism",
-                portrait: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Autoportret_Claude_Monet.jpg/1623px-Autoportret_Claude_Monet.jpg",
+                portrait: monet,
                 description: "",
                 artworks: [
                     {
@@ -357,7 +360,7 @@ const data: Data = {
                 wasBorIn: "9/29/1571?/Itália",
                 diedIn: "7/18/1610/Itália",
                 movement: "Baroque",
-                portrait: "",
+                portrait: undefined,
                 description: "",
                 artworks: [
                     {
@@ -398,7 +401,7 @@ const data: Data = {
                 wasBorIn: "6/28/1577/Alemanha",
                 diedIn: "5/30/1640/Bélgica",
                 movement: "Baroque",
-                portrait: "https://upload.wikimedia.org/wikipedia/commons/a/a0/Peter_Paul_Rubens_-_Self-Portrait_-_WGA20380.jpg",
+                portrait: paulRubens,
                 description: "",
                 artworks: [
                     {
@@ -441,7 +444,7 @@ const data: Data = {
                 wasBorIn: "3/30/1853/Netherlands",
                 diedIn: "7/29/1890/France",
                 movement: "Post-Impressionism",
-                portrait: "https://images.metmuseum.org/CRDImages/ep/original/DT1502_cropped2.jpg",
+                portrait: vanGogh,
                 description: "Vincent Willem van Gogh was a Dutch Post-Impressionist artist who emerged as one of the most famous figures in the history of Western art after his death. Van Gogh's landscapes, still lifes, portraits, and self-portraits are characterized by vibrant contrasts of complementary colors, expressive brushwork, and abstract, linear planes inspired by the Japanese prints he collected and admired. His innovations contributed to the foundations of modern art. Van Gogh's images often reflect personal symbolism, experiences, and emotions he discussed in correspondence with family and friends. He expressed a desire to communicate joy and comfort through his art and aspired to gather a community of like-minded artists in southern France. Van Gogh did not achieve commercial success in his lifetime and relied on financial support from his brother, Theo van Gogh. His life was shaped by severe depression and episodes of acute psychological distress. Van Gogh committed suicide at the age of 37",
                 artworks: [
                     {
@@ -482,7 +485,7 @@ const data: Data = {
                 wasBorIn: "10/25/1881/Spain",
                 diedIn: "4/8/1973/France",
                 movement: "Cubism",
-                portrait: "https://static.wixstatic.com/media/a36bfa_14e610c98eb84f0692b7ab61656178c2~mv2_d_3036_4048_s_4_2.jpg/v1/fill/w_3036,h_4048,al_c,q_85/a36bfa_14e610c98eb84f0692b7ab61656178c2~mv2_d_3036_4048_s_4_2.jpg",
+                portrait: picasso,
                 description: "One of the most influential artists of the 20th century, he is known for co-founding the Cubist movement, the invention of constructed sculpture, the co-invention of collage, and for the wide variety of styles that he helped develop and explore. Picasso's work is often categorized into periods. While the names of many of his later periods are debated, the most commonly accepted periods in his work are the Blue Period, the Rose Period, the African-influenced Period, Analytic Cubism, and Synthetic Cubism, also referred to as the Crystal period",
                 artworks: [
                     {
@@ -523,7 +526,7 @@ const data: Data = {
                 wasBorIn: "1/6/1832/France",
                 diedIn: "1/23/1883/France",
                 movement: "Romantism",
-                portrait: "",
+                portrait: undefined,
                 description: "",
                 artworks: [
                     {
@@ -564,7 +567,7 @@ const data: Data = {
                 wasBorIn: "5/11/1904/Spain",
                 diedIn: "1/23/1989/Spain",
                 movement: "Surrealism",
-                portrait: "https://i.pinimg.com/originals/3b/48/01/3b4801afde02f76f9b6a9648dbdf6b3f.jpg",
+                portrait: dali,
                 description: "Salvador Domingo Dalí was a Spanish renowned for his technical skill, precise draftsmanship, and the striking and bizarre images in his work. Dalí received his formal education in fine arts in Madrid. Influenced by Impressionism and the Renaissance masters from a young age he became increasingly attracted to Cubism and avant-garde movements. He moved closer to Surrealism in the late 1920s and joined the Surrealist group in 1929, soon becoming one of its leading exponents. His best-known work, The Persistence of Memory, was completed in August 1931, and is one of the most famous Surrealist paintings. based on his interest in classicism, mysticism, and recent scientific developments. Dalí's artistic repertoire included painting, graphic arts, film, sculpture, design and photography, at times in collaboration with other artists. He also wrote fiction, poetry, autobiography, essays and criticism. Major themes in his work include dreams, the subconscious, sexuality, religion, science and his closest personal relationships.",
                 artworks: [
                     {
@@ -605,7 +608,7 @@ const data: Data = {
                 wasBorIn: "",
                 diedIn: "",
                 movement: "Expressionism",
-                portrait: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Edvard_Munch_-_Self-Portrait_-_Google_Art_Project_%28533070%29.jpg",
+                portrait: munch,
                 description: "",
                 artworks: [
                     {
@@ -646,7 +649,7 @@ const data: Data = {
                 wasBorIn: "",
                 diedIn: "",
                 movement: "Baroque",
-                portrait: "",
+                portrait: undefined,
                 description: "",
                 artworks: [
                     {
@@ -687,7 +690,7 @@ const data: Data = {
                 wasBorIn: "7/15/1606/Netherlands",
                 diedIn: "10/4/1669/Netherlands",
                 movement: "Baroque",
-                portrait: "https://upload.wikimedia.org/wikipedia/commons/5/55/Rembrandt_Self-Portrait_%28Royal_Collection%29.jpg",
+                portrait: rembrandt,
                 description: "",
                 artworks: [
                     {
@@ -728,7 +731,7 @@ const data: Data = {
                 wasBorIn: "11/14/1840/France",
                 diedIn: "12/5/1926/France",
                 movement: "Naturalism",
-                portrait: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Autoportret_Claude_Monet.jpg/1623px-Autoportret_Claude_Monet.jpg",
+                portrait: monet,
                 description: "",
                 artworks: [
                     {
@@ -769,7 +772,7 @@ const data: Data = {
                 wasBorIn: "9/29/1571?/Italy",
                 diedIn: "7/18/1610/Italy",
                 movement: "Baroque",
-                portrait: "",
+                portrait: undefined,
                 description: "",
                 artworks: [
                     {
@@ -810,7 +813,7 @@ const data: Data = {
                 wasBorIn: "6/28/1577/Germany",
                 diedIn: "5/30/1640/Belgium",
                 movement: "Baroque",
-                portrait: "https://upload.wikimedia.org/wikipedia/commons/a/a0/Peter_Paul_Rubens_-_Self-Portrait_-_WGA20380.jpg",
+                portrait: paulRubens,
                 description: "",
                 artworks: [
                     {
