@@ -1,6 +1,6 @@
 import data, { Artist } from "./data";
 
-export type ArtistsByCountry = Record<"pt" | "en" | string, Artist[]>
+export type ArtistsByCountry = Record<string, Artist[]>
 
 const artistsByCountry: ArtistsByCountry = {};
 
