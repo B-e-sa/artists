@@ -1,4 +1,4 @@
-import data from "../data";
+import data from "..";
 
 export default function getNumberOfArtworks(
     artistName: string

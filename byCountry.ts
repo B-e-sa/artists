@@ -1,4 +1,4 @@
-import data, { Artist } from "./data";
+import data, { Artist } from ".";
 
 export type ArtistsByCountry = Record<string, Artist[]>
 

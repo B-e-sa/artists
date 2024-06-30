@@ -19,8 +19,10 @@ export type Artist = {
     artworks: Artwork[]
 }
 
+export type Language = "pt" | "en"
+
 export type Data = {
-    language: Record<string, Artist[]>
+    language: Record<Language, Artist[]>
 }
 
 const data: Data = {
@@ -437,7 +439,7 @@ const data: Data = {
                 ]
             }
         ],
-        eng: [
+        en: [
             {
                 nickname: "Van Gogh",
                 fullName: "Vincent Willem van Gogh",
