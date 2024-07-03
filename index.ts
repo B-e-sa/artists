@@ -19,24 +19,24 @@ import picassoPortrait, {
 import daliPortrait from "./artists/dali";
 import monetPortrait from "./artists/monet";
 import munchPortrait from "./artists/munch";
-import paulRubensPortrait from "./artists/paul-rubens";
+import paulRubensPortrait, { descentFromTheCross, massacreOfTheInnocents, prometheusBound, theHippopotamusAndCrocodileHunt, theJudgmentOfParis } from "./artists/paul-rubens";
 import rembrandtPortrait from "./artists/rembrandt";
 
 export type Artwork = {
     name: string;
     image: StaticImageData | string | undefined;
     completedIn: string;
-    description: string;
+    description: string | undefined;
 }
 
 export type Artist = {
     nickname: string;
     fullName: string;
-    borIn: string;
-    diedIn: string;
+    borIn: string | undefined;
+    diedIn: string | undefined;
     movement: string;
     portrait: StaticImageData | undefined;
-    description: string;
+    description: string | undefined;
     artworks: Artwork[];
 }
 
@@ -138,13 +138,13 @@ const data: Data = {
                 diedIn: "1/23/1883/França",
                 movement: "Romantism",
                 portrait: undefined,
-                description: "",
+                description: undefined,
                 artworks: [
                     {
                         name: "La Siesta",
                         image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Gustave_Dore_-_La_Siesta%2C_Memory_of_Spain_-_Google_Art_Project.jpg/1200px-Gustave_Dore_-_La_Siesta%2C_Memory_of_Spain_-_Google_Art_Project.jpg",
                         completedIn: "1868",
-                        description: "----"
+                        description: undefined
                     },
                     {
                         name: "The Enigma",
@@ -168,7 +168,7 @@ const data: Data = {
                         name: "Alpine Scene",
                         image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Gustave_Dor%C3%A9_-_Alpine_Scene_-_1967.588_-_Art_Institute_of_Chicago.jpg/1200px-Gustave_Dor%C3%A9_-_Alpine_Scene_-_1967.588_-_Art_Institute_of_Chicago.jpg",
                         completedIn: "1865",
-                        description: "----"
+                        description: undefined
                     }
                 ]
             },
@@ -216,11 +216,11 @@ const data: Data = {
             {
                 nickname: "Munch",
                 fullName: "Edvard Daniel Jon Hans Einar Erling Munch",
-                borIn: "",
-                diedIn: "",
+                borIn: undefined,
+                diedIn: undefined,
                 movement: "Expressionism",
                 portrait: munchPortrait,
-                description: "",
+                description: undefined,
                 artworks: [
                     {
                         name: "The Scream",
@@ -257,11 +257,11 @@ const data: Data = {
             {
                 nickname: "Vermeer",
                 fullName: "Johannes Vermeer",
-                borIn: "",
-                diedIn: "",
+                borIn: undefined,
+                diedIn: undefined,
                 movement: "Baroque",
                 portrait: undefined,
-                description: "",
+                description: undefined,
                 artworks: [
                     {
                         name: "Girl with a Pearl Earring",
@@ -302,7 +302,7 @@ const data: Data = {
                 diedIn: "10/4/1669/Países Baixos",
                 movement: "Baroque",
                 portrait: rembrandtPortrait,
-                description: "",
+                description: undefined,
                 artworks: [
                     {
                         name: "The Night Watch",
@@ -343,7 +343,7 @@ const data: Data = {
                 diedIn: "12/5/1926/França",
                 movement: "Naturalism",
                 portrait: monetPortrait,
-                description: "",
+                description: undefined,
                 artworks: [
                     {
                         name: "Woman with Parasol",
@@ -380,11 +380,11 @@ const data: Data = {
             {
                 nickname: "Caravaggio",
                 fullName: "Michelangelo \"Caravaggio\" Merisi",
-                borIn: "9/29/1571?/Itália",
+                borIn: "9/29/1571/Itália",
                 diedIn: "7/18/1610/Itália",
                 movement: "Baroque",
                 portrait: undefined,
-                description: "",
+                description: undefined,
                 artworks: [
                     {
                         name: "The Incredulity of Saint Thomas",
@@ -425,35 +425,35 @@ const data: Data = {
                 diedIn: "5/30/1640/Bélgica",
                 movement: "Baroque",
                 portrait: paulRubensPortrait,
-                description: "",
+                description: undefined,
                 artworks: [
                     {
                         name: "The Massacre of the Innocents",
-                        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Rubens_-_Massacre_of_the_Innocents_-_Art_Gallery_of_Ontario_2.jpg/1200px-Rubens_-_Massacre_of_the_Innocents_-_Art_Gallery_of_Ontario_2.jpg",
+                        image: massacreOfTheInnocents,
                         completedIn: "1610",
                         description: "Depicts the biblical tale of Roman soldiers executing male newborns in Bethlehem on the orders of King Herod"
                     },
                     {
                         name: "Prometheus Bound",
-                        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Rubens_-_Prometheus_Bound.jpg/1200px-Rubens_-_Prometheus_Bound.jpg",
+                        image: prometheusBound,
                         completedIn: "1612",
                         description: "With hooked beak, a monstrous vulture digs about in the liver of Prometheus, who is given no peace from his torments as ever and again the savage bird draws near his self-renewing breast and attacks it punishingly"
                     },
                     {
                         name: "The Descent from the Cross",
-                        image: "https://upload.wikimedia.org/wikipedia/commons/d/d2/Descent_from_the_Cross_%28Rubens%29_July_2015-1a.jpg",
+                        image: descentFromTheCross,
                         completedIn: "1612",
                         description: "Depicts Christ's lifeless body being taken down from the cross by a group of people, among them the Virgin Mary, John the Apostle cloaked in red and Mary Magdalene, described by the cathedral as “a paragon of Baroque art”"
                     },
                     {
                         name: "The Judgement of Paris",
-                        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Peter_Paul_Rubens_-_The_Judgment_of_Paris_-_WGA20307.jpg/2560px-Peter_Paul_Rubens_-_The_Judgment_of_Paris_-_WGA20307.jpg",
+                        image: theJudgmentOfParis,
                         completedIn: "1636",
                         description: "Depicts the mythic Roman tale of the same name in which Paris was forced to judge the most beautiful of three goddesses — Venus, Minerva and Juno — in events that ignited the Trojan War"
                     },
                     {
                         name: "The Hippopotamus and Crocodile Hunt",
-                        image: "https://upload.wikimedia.org/wikipedia/commons/8/84/Peter_Paul_Rubens_083.jpg",
+                        image: theHippopotamusAndCrocodileHunt,
                         completedIn: "1616",
                         description: "Commissioned by Maximilian I, Elector of Bavaria to adorn his summer residence, the Schleissheim Palace — is just one of these hunting pieces and today resides at Munich's Alte Pinokothek."
                     }
@@ -513,31 +513,31 @@ const data: Data = {
                 artworks: [
                     {
                         name: "Guernica",
-                        image: "https://static3.museoreinasofia.es/sites/default/files/styles/foto_horizontal_normal/public/obras/DE00050_0.jpg?itok=pGgIuEEd",
+                        image: guernica,
                         completedIn: "1937",
                         description: "Picasso said very little about the painting's meaning, leaving interpretation to viewers, critics, and art historians. Although clear as an emotional response to war's senseless violence"
                     },
                     {
                         name: "The Old Guitarist",
-                        image: "https://www.artic.edu/iiif/2/ddacae05-9279-51b5-e9ab-00024ae01e27/full/843,/0/default.jpg",
+                        image: vieuxGuitaristeAveugle,
                         completedIn: "1904",
                         description: "The painting reﬂects the twenty-two-year-old Picasso's personal struggle and sympathy for the plight of the downtrodden"
                     },
                     {
                         name: "Les Demoiselles D'Avignon",
-                        image: "https://www.moma.org/media/W1siZiIsIjQzODQ1MiJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQ.jpg?sha=c96b77818fd18af4",
+                        image: lesDemoisellesDAvingon,
                         completedIn: "1907",
                         description: "It depicts five naked women composed of flat, splintered planes whose faces were inspired by Iberian sculpture and African masks"
                     },
                     {
                         name: "Gertrude Stein",
-                        image: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/488221/1009264/restricted",
+                        image: gertrudeStein,
                         completedIn: "1906",
                         description: "An portrait of the famous writer and expatriate Gertrude Stein"
                     },
                     {
                         name: "Garçon à la Pipe",
-                        image: "https://upload.wikimedia.org/wikipedia/en/thumb/9/9c/Garçon_à_la_pipe.jpg/800px-Garçon_à_la_pipe.jpg",
+                        image: garconALaPipe,
                         completedIn: "1905",
                         description: "The painting depicts an boy wearing a headpiece of flowers, holding a pipe, with more flowers appearing in the background"
                     }
@@ -550,13 +550,13 @@ const data: Data = {
                 diedIn: "1/23/1883/France",
                 movement: "Romantism",
                 portrait: undefined,
-                description: "",
+                description: undefined,
                 artworks: [
                     {
                         name: "La Siesta",
                         image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Gustave_Dore_-_La_Siesta%2C_Memory_of_Spain_-_Google_Art_Project.jpg/1200px-Gustave_Dore_-_La_Siesta%2C_Memory_of_Spain_-_Google_Art_Project.jpg",
                         completedIn: "1868",
-                        description: "----"
+                        description: undefined
                     },
                     {
                         name: "The Enigma",
@@ -580,7 +580,7 @@ const data: Data = {
                         name: "Alpine Scene",
                         image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Gustave_Dor%C3%A9_-_Alpine_Scene_-_1967.588_-_Art_Institute_of_Chicago.jpg/1200px-Gustave_Dor%C3%A9_-_Alpine_Scene_-_1967.588_-_Art_Institute_of_Chicago.jpg",
                         completedIn: "1865",
-                        description: "----"
+                        description: undefined
                     }
                 ]
             },
@@ -628,11 +628,11 @@ const data: Data = {
             {
                 nickname: "Munch",
                 fullName: "Edvard Daniel Jon Hans Einar Erling Munch",
-                borIn: "",
-                diedIn: "",
+                borIn: undefined,
+                diedIn: undefined,
                 movement: "Expressionism",
                 portrait: munchPortrait,
-                description: "",
+                description: undefined,
                 artworks: [
                     {
                         name: "The Scream",
@@ -669,11 +669,11 @@ const data: Data = {
             {
                 nickname: "Vermeer",
                 fullName: "Johannes Vermeer",
-                borIn: "",
-                diedIn: "",
+                borIn: undefined,
+                diedIn: undefined,
                 movement: "Baroque",
                 portrait: undefined,
-                description: "",
+                description: undefined,
                 artworks: [
                     {
                         name: "Girl with a Pearl Earring",
@@ -714,7 +714,7 @@ const data: Data = {
                 diedIn: "10/4/1669/Netherlands",
                 movement: "Baroque",
                 portrait: rembrandtPortrait,
-                description: "",
+                description: undefined,
                 artworks: [
                     {
                         name: "The Night Watch",
@@ -755,7 +755,7 @@ const data: Data = {
                 diedIn: "12/5/1926/France",
                 movement: "Naturalism",
                 portrait: monetPortrait,
-                description: "",
+                description: undefined,
                 artworks: [
                     {
                         name: "Woman with Parasol",
@@ -792,11 +792,11 @@ const data: Data = {
             {
                 nickname: "Caravaggio",
                 fullName: "Michelangelo \"Caravaggio\" Merisi",
-                borIn: "9/29/1571?/Italy",
+                borIn: "9/29/1571/Italy",
                 diedIn: "7/18/1610/Italy",
                 movement: "Baroque",
                 portrait: undefined,
-                description: "",
+                description: undefined,
                 artworks: [
                     {
                         name: "The Incredulity of Saint Thomas",
@@ -837,35 +837,35 @@ const data: Data = {
                 diedIn: "5/30/1640/Belgium",
                 movement: "Baroque",
                 portrait: paulRubensPortrait,
-                description: "",
+                description: undefined,
                 artworks: [
                     {
                         name: "The Massacre of the Innocents",
-                        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Rubens_-_Massacre_of_the_Innocents_-_Art_Gallery_of_Ontario_2.jpg/1200px-Rubens_-_Massacre_of_the_Innocents_-_Art_Gallery_of_Ontario_2.jpg",
+                        image: massacreOfTheInnocents,
                         completedIn: "1610",
                         description: "Depicts the biblical tale of Roman soldiers executing male newborns in Bethlehem on the orders of King Herod"
                     },
                     {
                         name: "Prometheus Bound",
-                        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Rubens_-_Prometheus_Bound.jpg/1200px-Rubens_-_Prometheus_Bound.jpg",
+                        image: prometheusBound,
                         completedIn: "1612",
                         description: "With hooked beak, a monstrous vulture digs about in the liver of Prometheus, who is given no peace from his torments as ever and again the savage bird draws near his self-renewing breast and attacks it punishingly"
                     },
                     {
                         name: "The Descent from the Cross",
-                        image: "https://upload.wikimedia.org/wikipedia/commons/d/d2/Descent_from_the_Cross_%28Rubens%29_July_2015-1a.jpg",
+                        image: descentFromTheCross,
                         completedIn: "1612",
                         description: "Depicts Christ's lifeless body being taken down from the cross by a group of people, among them the Virgin Mary, John the Apostle cloaked in red and Mary Magdalene, described by the cathedral as “a paragon of Baroque art”"
                     },
                     {
                         name: "The Judgement of Paris",
-                        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Peter_Paul_Rubens_-_The_Judgment_of_Paris_-_WGA20307.jpg/2560px-Peter_Paul_Rubens_-_The_Judgment_of_Paris_-_WGA20307.jpg",
+                        image: theJudgmentOfParis,
                         completedIn: "1636",
                         description: "Depicts the mythic Roman tale of the same name in which Paris was forced to judge the most beautiful of three goddesses — Venus, Minerva and Juno — in events that ignited the Trojan War"
                     },
                     {
                         name: "The Hippopotamus and Crocodile Hunt",
-                        image: "https://upload.wikimedia.org/wikipedia/commons/8/84/Peter_Paul_Rubens_083.jpg",
+                        image: theHippopotamusAndCrocodileHunt,
                         completedIn: "1616",
                         description: "Commissioned by Maximilian I, Elector of Bavaria to adorn his summer residence, the Schleissheim Palace — is just one of these hunting pieces and today resides at Munich's Alte Pinokothek."
                     }
