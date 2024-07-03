@@ -5,32 +5,39 @@ import vanGoghPortrait, {
     bedroomInArles,
     cafeTerraceAtNight,
     starryNight,
-    twoCutSunflowers
+    twoCutSunflowers,
 } from "./artists/van-gogh";
+
+import picassoPortrait, {
+    garconALaPipe,
+    gertrudeStein,
+    guernica,
+    lesDemoisellesDAvingon,
+    vieuxGuitaristeAveugle
+} from "./artists/picasso";
 
 import daliPortrait from "./artists/dali";
 import monetPortrait from "./artists/monet";
 import munchPortrait from "./artists/munch";
 import paulRubensPortrait from "./artists/paul-rubens";
-import picassoPortrait from "./artists/picasso";
 import rembrandtPortrait from "./artists/rembrandt";
 
 export type Artwork = {
     name: string;
-    image: string;
+    image: StaticImageData | string | undefined;
     completedIn: string;
-    description: string
+    description: string;
 }
 
 export type Artist = {
     nickname: string;
     fullName: string;
-    wasBorIn: string;
+    borIn: string;
     diedIn: string;
     movement: string;
     portrait: StaticImageData | undefined;
     description: string;
-    artworks: Artwork[]
+    artworks: Artwork[];
 }
 
 export type Language = "pt" | "en"
@@ -45,7 +52,7 @@ const data: Data = {
             {
                 nickname: "Van Gogh",
                 fullName: "Vincent Willem van Gogh",
-                wasBorIn: "3/30/1853/Países Baixos",
+                borIn: "3/30/1853/Países Baixos",
                 diedIn: "7/29/1890/França",
                 movement: "Pós-impressionismo",
                 portrait: vanGoghPortrait,
@@ -86,7 +93,7 @@ const data: Data = {
             {
                 nickname: "Picasso",
                 fullName: "Pablo Diego José Francisco de Paula Juan Nepomuceno Crispín Crispiniano María Remedios de la Santísima Trinidad Ruiz Picasso",
-                wasBorIn: "10/25/1881/Espanha",
+                borIn: "10/25/1881/Espanha",
                 diedIn: "4/8/1973/França",
                 movement: "Cubismo",
                 portrait: picassoPortrait,
@@ -94,31 +101,31 @@ const data: Data = {
                 artworks: [
                     {
                         name: "Guernica",
-                        image: "https://static3.museoreinasofia.es/sites/default/files/styles/foto_horizontal_normal/public/obras/DE00050_0.jpg?itok=pGgIuEEd",
+                        image: guernica,
                         completedIn: "1937",
                         description: "Picasso disse pouco sobre o significado da pintura, deixando a interpretação para apreciadores, criticos e historiadores da arte. Embora seja claramente uma resposta emocional a violência sem sentido da guerra, principalmente a Guerra Civil Espanhola."
                     },
                     {
                         name: "Vieux guitariste aveugle",
-                        image: "https://www.artic.edu/iiif/2/ddacae05-9279-51b5-e9ab-00024ae01e27/full/843,/0/default.jpg",
+                        image: vieuxGuitaristeAveugle,
                         completedIn: "1904",
                         description: "A pintura reflete a luta pessoal e a simpatia de Picasso, de 22 anos, pela situação dos oprimidos."
                     },
                     {
                         name: "Les Demoiselles D'Avignon",
-                        image: "https://www.moma.org/media/W1siZiIsIjQzODQ1MiJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQ.jpg?sha=c96b77818fd18af4",
+                        image: lesDemoisellesDAvingon,
                         completedIn: "1907",
                         description: "It depicts five naked women composed of flat, splintered planes whose faces were inspired by Iberian sculpture and African masks"
                     },
                     {
                         name: "Gertrude Stein",
-                        image: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/488221/1009264/restricted",
+                        image: gertrudeStein,
                         completedIn: "1906",
                         description: "An portrait of the famous writer and expatriate Gertrude Stein"
                     },
                     {
                         name: "Garçon à la Pipe",
-                        image: "https://upload.wikimedia.org/wikipedia/en/thumb/9/9c/Garçon_à_la_pipe.jpg/800px-Garçon_à_la_pipe.jpg",
+                        image: garconALaPipe,
                         completedIn: "1905",
                         description: "The painting depicts an boy wearing a headpiece of flowers, holding a pipe, with more flowers appearing in the background"
                     }
@@ -127,7 +134,7 @@ const data: Data = {
             {
                 nickname: "Gustave Dore",
                 fullName: "Paul-Gustave Doré",
-                wasBorIn: "1/6/1832/França",
+                borIn: "1/6/1832/França",
                 diedIn: "1/23/1883/França",
                 movement: "Romantism",
                 portrait: undefined,
@@ -168,7 +175,7 @@ const data: Data = {
             {
                 nickname: "Dalí",
                 fullName: "Salvador Domingo Felipe Jacinto Dalí i Domènech",
-                wasBorIn: "5/11/1904/Espanha",
+                borIn: "5/11/1904/Espanha",
                 diedIn: "1/23/1989/Espanha",
                 movement: "Surrealism",
                 portrait: daliPortrait,
@@ -209,7 +216,7 @@ const data: Data = {
             {
                 nickname: "Munch",
                 fullName: "Edvard Daniel Jon Hans Einar Erling Munch",
-                wasBorIn: "",
+                borIn: "",
                 diedIn: "",
                 movement: "Expressionism",
                 portrait: munchPortrait,
@@ -250,7 +257,7 @@ const data: Data = {
             {
                 nickname: "Vermeer",
                 fullName: "Johannes Vermeer",
-                wasBorIn: "",
+                borIn: "",
                 diedIn: "",
                 movement: "Baroque",
                 portrait: undefined,
@@ -291,7 +298,7 @@ const data: Data = {
             {
                 nickname: "Rembrandt",
                 fullName: "Rembrandt Harmenszoon van Rijn",
-                wasBorIn: "7/15/1606/Países Baixos",
+                borIn: "7/15/1606/Países Baixos",
                 diedIn: "10/4/1669/Países Baixos",
                 movement: "Baroque",
                 portrait: rembrandtPortrait,
@@ -332,7 +339,7 @@ const data: Data = {
             {
                 nickname: "Monet",
                 fullName: "Oscar-Claude Monet",
-                wasBorIn: "11/14/1840/França",
+                borIn: "11/14/1840/França",
                 diedIn: "12/5/1926/França",
                 movement: "Naturalism",
                 portrait: monetPortrait,
@@ -373,7 +380,7 @@ const data: Data = {
             {
                 nickname: "Caravaggio",
                 fullName: "Michelangelo \"Caravaggio\" Merisi",
-                wasBorIn: "9/29/1571?/Itália",
+                borIn: "9/29/1571?/Itália",
                 diedIn: "7/18/1610/Itália",
                 movement: "Baroque",
                 portrait: undefined,
@@ -414,7 +421,7 @@ const data: Data = {
             {
                 nickname: "Paul Rubens",
                 fullName: "Peter Paul Rubens",
-                wasBorIn: "6/28/1577/Alemanha",
+                borIn: "6/28/1577/Alemanha",
                 diedIn: "5/30/1640/Bélgica",
                 movement: "Baroque",
                 portrait: paulRubensPortrait,
@@ -457,7 +464,7 @@ const data: Data = {
             {
                 nickname: "Van Gogh",
                 fullName: "Vincent Willem van Gogh",
-                wasBorIn: "3/30/1853/Netherlands",
+                borIn: "3/30/1853/Netherlands",
                 diedIn: "7/29/1890/France",
                 movement: "Post-Impressionism",
                 portrait: vanGoghPortrait,
@@ -498,7 +505,7 @@ const data: Data = {
             {
                 nickname: "Picasso",
                 fullName: "Pablo Diego José Francisco de Paula Juan Nepomuceno Crispín Crispiniano María Remedios de la Santísima Trinidad Ruiz Picasso",
-                wasBorIn: "10/25/1881/Spain",
+                borIn: "10/25/1881/Spain",
                 diedIn: "4/8/1973/France",
                 movement: "Cubism",
                 portrait: picassoPortrait,
@@ -539,7 +546,7 @@ const data: Data = {
             {
                 nickname: "Gustave Dore",
                 fullName: "Paul-Gustave Doré",
-                wasBorIn: "1/6/1832/France",
+                borIn: "1/6/1832/France",
                 diedIn: "1/23/1883/France",
                 movement: "Romantism",
                 portrait: undefined,
@@ -580,7 +587,7 @@ const data: Data = {
             {
                 nickname: "Dalí",
                 fullName: "Salvador Domingo Felipe Jacinto Dalí i Domènech",
-                wasBorIn: "5/11/1904/Spain",
+                borIn: "5/11/1904/Spain",
                 diedIn: "1/23/1989/Spain",
                 movement: "Surrealism",
                 portrait: daliPortrait,
@@ -621,7 +628,7 @@ const data: Data = {
             {
                 nickname: "Munch",
                 fullName: "Edvard Daniel Jon Hans Einar Erling Munch",
-                wasBorIn: "",
+                borIn: "",
                 diedIn: "",
                 movement: "Expressionism",
                 portrait: munchPortrait,
@@ -662,7 +669,7 @@ const data: Data = {
             {
                 nickname: "Vermeer",
                 fullName: "Johannes Vermeer",
-                wasBorIn: "",
+                borIn: "",
                 diedIn: "",
                 movement: "Baroque",
                 portrait: undefined,
@@ -703,7 +710,7 @@ const data: Data = {
             {
                 nickname: "Rembrandt",
                 fullName: "Rembrandt Harmenszoon van Rijn",
-                wasBorIn: "7/15/1606/Netherlands",
+                borIn: "7/15/1606/Netherlands",
                 diedIn: "10/4/1669/Netherlands",
                 movement: "Baroque",
                 portrait: rembrandtPortrait,
@@ -744,7 +751,7 @@ const data: Data = {
             {
                 nickname: "Monet",
                 fullName: "Oscar-Claude Monet",
-                wasBorIn: "11/14/1840/France",
+                borIn: "11/14/1840/France",
                 diedIn: "12/5/1926/France",
                 movement: "Naturalism",
                 portrait: monetPortrait,
@@ -785,7 +792,7 @@ const data: Data = {
             {
                 nickname: "Caravaggio",
                 fullName: "Michelangelo \"Caravaggio\" Merisi",
-                wasBorIn: "9/29/1571?/Italy",
+                borIn: "9/29/1571?/Italy",
                 diedIn: "7/18/1610/Italy",
                 movement: "Baroque",
                 portrait: undefined,
@@ -826,7 +833,7 @@ const data: Data = {
             {
                 nickname: "Paul Rubens",
                 fullName: "Peter Paul Rubens",
-                wasBorIn: "6/28/1577/Germany",
+                borIn: "6/28/1577/Germany",
                 diedIn: "5/30/1640/Belgium",
                 movement: "Baroque",
                 portrait: paulRubensPortrait,
