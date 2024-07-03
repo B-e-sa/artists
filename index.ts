@@ -1,5 +1,19 @@
 import { StaticImageData } from "next/image";
-import { dali, monet, munch, paulRubens, picasso, rembrandt, vanGogh } from "./images";
+
+import vanGoghPortrait, {
+    almondBlossom,
+    bedroomInArles,
+    cafeTerraceAtNight,
+    starryNight,
+    twoCutSunflowers
+} from "./artists/van-gogh";
+
+import daliPortrait from "./artists/dali";
+import monetPortrait from "./artists/monet";
+import munchPortrait from "./artists/munch";
+import paulRubensPortrait from "./artists/paul-rubens";
+import picassoPortrait from "./artists/picasso";
+import rembrandtPortrait from "./artists/rembrandt";
 
 export type Artwork = {
     name: string;
@@ -34,36 +48,36 @@ const data: Data = {
                 wasBorIn: "3/30/1853/Países Baixos",
                 diedIn: "7/29/1890/França",
                 movement: "Pós-impressionismo",
-                portrait: vanGogh,
+                portrait: vanGoghPortrait,
                 description: "Vincent Willem van Gogh foi um artista pós-impressionista holandês que emergiu como uma das mais famosas figuras na historia da arte ocidental após sua morte. As paisagens, artes mortas, retratos e auto-retratos são caracterizados por vibrantes contrastes de cores complementares, pincelas exprecivas e planos lineares abstratos, inspirados pelas impressões japonêsas que ele adquiria e admirava. Suas inovações contribuiram para a fundação da arte moderna. As imagens de Van Gogh geralmente refletem simbolismo pessoas, experiêncais e emoções que ele discutiu em correspondência a sua família e amigos. Ele expressou o desejo de comunicar felicidade e conforto por meio de sua arte, inspirado a reunir uma comunidade de artistas com o mesmo pensamento no sul da França. Van Gogh nunca conseguiu sucesso comercial em seu tempo de vida e dependia do suporte financeiro do seu irmão, Theo Van Gogh. Sua vida foi formada por uma depressão severa e episódios de estresse psicológico agudo. Vincent cometeu suicídio aos 37 anos",
                 artworks: [
                     {
                         name: "Noite Estrelada",
-                        image: "https://www.moma.org/media/W1siZiIsIjQ2NzUxNyJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQ.jpg?sha=314ebf8cc678676f",
+                        image: starryNight,
                         completedIn: "1889",
                         description: "Van Gogh criou esta pintura depois de um grande surto mental, onde se sentiu triste e suicida. As ondas no céu refletem sua turbulência emocional. O cenário da pintura retrata a visão de Saint-Rémy-de-Provence, que Van Gogh viu da janela de seu quarto"
                     },
                     {
                         name: "Terraço do Café à Noite",
-                        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Vincent_Willem_van_Gogh_-_Cafe_Terrace_at_Night_%28Yorck%29.jpg/816px-Vincent_Willem_van_Gogh_-_Cafe_Terrace_at_Night_%28Yorck%29.jpg",
+                        image: cafeTerraceAtNight,
                         completedIn: "1888",
                         description: "Van Gogh posicionou seu cavalete ao ar livre, a tarde, para pintar o cenário. Isso foi uma prática que ele adquiriu dos impressionistas em Paris. De todo modo, ele não pintou a cena como observou, mas sim, usou cor e técnicas de pinceladas para retratar suas emoções. Nessa pintura, Van Gogh apresenta entusiasmo e alegria"
                     },
                     {
                         name: "Girassóis",
-                        image: "https://images.metmuseum.org/CRDImages/ep/original/DP229743.jpg",
+                        image: twoCutSunflowers,
                         completedIn: "1888",
                         description: "Van Gogh queria decorar o quarto de seu visitante, Paul Gauguin, como ele estava se juntando a Willem em Arles, para que eles pudessem pintar juntos"
                     },
                     {
                         name: "Quarto em Arles",
-                        image: "https://iiif.micr.io/ZKSPH/full/1280,/0/default.jpg",
+                        image: bedroomInArles,
                         completedIn: "1888",
                         description: "Enquanto em Arles, Van Gogh fez esta pentura de seu quarto na casa amarela. Ele preparou o quarto com móveis simples e com seus próprios trabalhos na parede"
                     },
                     {
                         name: "Amendoeira em Flor",
-                        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Vincent_van_Gogh_-_Almond_blossom_-_Google_Art_Project.jpg/2560px-Vincent_van_Gogh_-_Almond_blossom_-_Google_Art_Project.jpg",
+                        image: almondBlossom,
                         completedIn: "1890",
                         description: "Grandes galhos de desabroxam sob o céu azul. Flores de amendoeira aparecem na primavera,  tornando-as simbolo de uma nova vida"
                     }
@@ -75,7 +89,7 @@ const data: Data = {
                 wasBorIn: "10/25/1881/Espanha",
                 diedIn: "4/8/1973/França",
                 movement: "Cubismo",
-                portrait: picasso,
+                portrait: picassoPortrait,
                 description: "Um dos mais influentes artistas do século 20, ele é conhecido por ser o co-fundador do movimento cubista, o invetor da arte cinética, o co-inventor da colagem e por uma grande variedade de estilos que ele ajudou a desenvolver e explorar. O trabalho de picasso é frequentemente categorizado em períodos. Enquanto o nome de vários de seus períodos posteriores ainda são debatidos, os períodos mais comumente aceitos em seu trabalho são o Período Azul, Período Rosé, Período de Afro-Influencia, Cubismo Analítico e o Cubismo Sintético, também chamado de Período de Cristal",
                 artworks: [
                     {
@@ -157,7 +171,7 @@ const data: Data = {
                 wasBorIn: "5/11/1904/Espanha",
                 diedIn: "1/23/1989/Espanha",
                 movement: "Surrealism",
-                portrait: dali,
+                portrait: daliPortrait,
                 description: "Salvador Domingo Dalí was a Spanish renowned for his technical skill, precise draftsmanship, and the striking and bizarre images in his work. Dalí received his formal education in fine arts in Madrid. Influenced by Impressionism and the Renaissance masters from a young age he became increasingly attracted to Cubism and avant-garde movements. He moved closer to Surrealism in the late 1920s and joined the Surrealist group in 1929, soon becoming one of its leading exponents. His best-known work, The Persistence of Memory, was completed in August 1931, and is one of the most famous Surrealist paintings. based on his interest in classicism, mysticism, and recent scientific developments. Dalí's artistic repertoire included painting, graphic arts, film, sculpture, design and photography, at times in collaboration with other artists. He also wrote fiction, poetry, autobiography, essays and criticism. Major themes in his work include dreams, the subconscious, sexuality, religion, science and his closest personal relationships.",
                 artworks: [
                     {
@@ -198,7 +212,7 @@ const data: Data = {
                 wasBorIn: "",
                 diedIn: "",
                 movement: "Expressionism",
-                portrait: munch,
+                portrait: munchPortrait,
                 description: "",
                 artworks: [
                     {
@@ -280,7 +294,7 @@ const data: Data = {
                 wasBorIn: "7/15/1606/Países Baixos",
                 diedIn: "10/4/1669/Países Baixos",
                 movement: "Baroque",
-                portrait: rembrandt,
+                portrait: rembrandtPortrait,
                 description: "",
                 artworks: [
                     {
@@ -321,7 +335,7 @@ const data: Data = {
                 wasBorIn: "11/14/1840/França",
                 diedIn: "12/5/1926/França",
                 movement: "Naturalism",
-                portrait: monet,
+                portrait: monetPortrait,
                 description: "",
                 artworks: [
                     {
@@ -403,7 +417,7 @@ const data: Data = {
                 wasBorIn: "6/28/1577/Alemanha",
                 diedIn: "5/30/1640/Bélgica",
                 movement: "Baroque",
-                portrait: paulRubens,
+                portrait: paulRubensPortrait,
                 description: "",
                 artworks: [
                     {
@@ -446,7 +460,7 @@ const data: Data = {
                 wasBorIn: "3/30/1853/Netherlands",
                 diedIn: "7/29/1890/France",
                 movement: "Post-Impressionism",
-                portrait: vanGogh,
+                portrait: vanGoghPortrait,
                 description: "Vincent Willem van Gogh was a Dutch Post-Impressionist artist who emerged as one of the most famous figures in the history of Western art after his death. Van Gogh's landscapes, still lifes, portraits, and self-portraits are characterized by vibrant contrasts of complementary colors, expressive brushwork, and abstract, linear planes inspired by the Japanese prints he collected and admired. His innovations contributed to the foundations of modern art. Van Gogh's images often reflect personal symbolism, experiences, and emotions he discussed in correspondence with family and friends. He expressed a desire to communicate joy and comfort through his art and aspired to gather a community of like-minded artists in southern France. Van Gogh did not achieve commercial success in his lifetime and relied on financial support from his brother, Theo van Gogh. His life was shaped by severe depression and episodes of acute psychological distress. Van Gogh committed suicide at the age of 37",
                 artworks: [
                     {
@@ -457,25 +471,25 @@ const data: Data = {
                     },
                     {
                         name: "Cafe Terrace at Night",
-                        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Vincent_Willem_van_Gogh_-_Cafe_Terrace_at_Night_%28Yorck%29.jpg/816px-Vincent_Willem_van_Gogh_-_Cafe_Terrace_at_Night_%28Yorck%29.jpg",
+                        image: cafeTerraceAtNight,
                         completedIn: "1888",
                         description: "Van Gogh set up his easel outdoors and in the evening hours to paint this scene. This was a practice that he picked up from the impressionists in Paris. However, he did not paint the scene as he observed it but rather used color and brushwork to express his emotions. In this painting, Van Gogh portrays excitement and pleasure"
                     },
                     {
                         name: "Sunflowers",
-                        image: "https://images.metmuseum.org/CRDImages/ep/original/DP229743.jpg",
+                        image: twoCutSunflowers,
                         completedIn: "1888",
                         description: "Van Gogh wanted to decorate his guest's bedroom (Paul Gauguin) as he was joining Willem in Arles so that they could paint together"
                     },
                     {
                         name: "The Bedroom",
-                        image: "https://iiif.micr.io/ZKSPH/full/1280,/0/default.jpg",
+                        image: bedroomInArles,
                         completedIn: "1888",
                         description: "While he was in Arles, Van Gogh made this painting of his bedroom in the Yellow House. He prepared the room himself with simple furniture and with his own work on the wall"
                     },
                     {
                         name: "Almond Blossom",
-                        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Vincent_van_Gogh_-_Almond_blossom_-_Google_Art_Project.jpg/2560px-Vincent_van_Gogh_-_Almond_blossom_-_Google_Art_Project.jpg",
+                        image: almondBlossom,
                         completedIn: "1890",
                         description: "Large blossom branches against a blue sky. Almond trees flower early in the spring making them a symbol of new life"
                     }
@@ -487,7 +501,7 @@ const data: Data = {
                 wasBorIn: "10/25/1881/Spain",
                 diedIn: "4/8/1973/France",
                 movement: "Cubism",
-                portrait: picasso,
+                portrait: picassoPortrait,
                 description: "One of the most influential artists of the 20th century, he is known for co-founding the Cubist movement, the invention of constructed sculpture, the co-invention of collage, and for the wide variety of styles that he helped develop and explore. Picasso's work is often categorized into periods. While the names of many of his later periods are debated, the most commonly accepted periods in his work are the Blue Period, the Rose Period, the African-influenced Period, Analytic Cubism, and Synthetic Cubism, also referred to as the Crystal period",
                 artworks: [
                     {
@@ -569,7 +583,7 @@ const data: Data = {
                 wasBorIn: "5/11/1904/Spain",
                 diedIn: "1/23/1989/Spain",
                 movement: "Surrealism",
-                portrait: dali,
+                portrait: daliPortrait,
                 description: "Salvador Domingo Dalí was a Spanish renowned for his technical skill, precise draftsmanship, and the striking and bizarre images in his work. Dalí received his formal education in fine arts in Madrid. Influenced by Impressionism and the Renaissance masters from a young age he became increasingly attracted to Cubism and avant-garde movements. He moved closer to Surrealism in the late 1920s and joined the Surrealist group in 1929, soon becoming one of its leading exponents. His best-known work, The Persistence of Memory, was completed in August 1931, and is one of the most famous Surrealist paintings. based on his interest in classicism, mysticism, and recent scientific developments. Dalí's artistic repertoire included painting, graphic arts, film, sculpture, design and photography, at times in collaboration with other artists. He also wrote fiction, poetry, autobiography, essays and criticism. Major themes in his work include dreams, the subconscious, sexuality, religion, science and his closest personal relationships.",
                 artworks: [
                     {
@@ -610,7 +624,7 @@ const data: Data = {
                 wasBorIn: "",
                 diedIn: "",
                 movement: "Expressionism",
-                portrait: munch,
+                portrait: munchPortrait,
                 description: "",
                 artworks: [
                     {
@@ -692,7 +706,7 @@ const data: Data = {
                 wasBorIn: "7/15/1606/Netherlands",
                 diedIn: "10/4/1669/Netherlands",
                 movement: "Baroque",
-                portrait: rembrandt,
+                portrait: rembrandtPortrait,
                 description: "",
                 artworks: [
                     {
@@ -733,7 +747,7 @@ const data: Data = {
                 wasBorIn: "11/14/1840/France",
                 diedIn: "12/5/1926/France",
                 movement: "Naturalism",
-                portrait: monet,
+                portrait: monetPortrait,
                 description: "",
                 artworks: [
                     {
@@ -815,7 +829,7 @@ const data: Data = {
                 wasBorIn: "6/28/1577/Germany",
                 diedIn: "5/30/1640/Belgium",
                 movement: "Baroque",
-                portrait: paulRubens,
+                portrait: paulRubensPortrait,
                 description: "",
                 artworks: [
                     {

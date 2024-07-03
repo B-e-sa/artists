@@ -9,6 +9,7 @@ data.language.pt.forEach(artist => {
 
     if (!artistsByCountry[birthCountry])
         artistsByCountry[birthCountry] = [];
+    
     artistsByCountry[birthCountry].push(artist);
 });
 
